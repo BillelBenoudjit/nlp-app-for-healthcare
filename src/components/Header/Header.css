@@ -1,0 +1,32 @@
+.title {
+    font-size: 2vw;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 35vh;
+    width: 100%
+}
+
+@media (max-width: 900px) {
+    .header {
+        justify-content: space-evenly;
+        height: 15vh
+    }
+    .title {
+        font-size: 2vh
+    }
+}
+
+.inputs {
+    width: 100%;
+    display: block;
+    justify-content: space-evenly;
+}
+
+.select {
+    width: 100%;
+}   
