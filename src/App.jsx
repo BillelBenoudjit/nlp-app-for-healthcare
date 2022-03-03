@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import { Container, Switch, withStyles } from '@material-ui/core'
-import { grey } from '@material-ui/core/colors';
+import { Container } from 'reactstrap'
 
 import Header from './components/Header/Header';
 import EntityRecognition from './components/EntityReconition/EntityRecognition'
 
 function App() {
-  const [lightMode, setLightMode] = useState(false)
   const [text, setText] = useState("")
   const [namedEntities, setNamedEntities] = useState([])
+  const [model, setModel] = useState("Camembert - FR")
 
   return (
     <div
@@ -20,17 +19,14 @@ function App() {
       }}
     >
       <Container
-        maxWidth='md'
         style={{ display: "flex", flexDirection: "column", height: "100vh", justifyContent: "space-evenly" }}
       >
-        {/* <div style={{ position: "absolute", top: "0", right: "15px", paddingTop: "10" }}>
-          <span>{lightMode ? "Dark" : "Light"} Mode</span>
-          <ThemeSwitch checked={lightMode} onChange={() => setLightMode(!lightMode)} />
-        </div> */}
         <Header
           text={text}
           setText={setText}
           setNamedEntities={setNamedEntities}
+          model={model}
+          setModel={setModel}
         />
         <EntityRecognition text={text} namedEntities={namedEntities} />
       </Container>
