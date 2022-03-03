@@ -23,12 +23,13 @@ function Entity({ namedEntity }) {
     }
 
     return (
-        <span style={tagsColorMapping[namedEntity.tag] || tagsColorMapping.default}>
+        <span className={namedEntity.tag ? "entity" : ""} style={tagsColorMapping[namedEntity.tag] || tagsColorMapping.default}>
             {namedEntity.entity}
-            <span style={{ fontWeight: 'bold', fontSize: "2vh" }}>
+            <span className="tag">
                 {namedEntity.tag ? ` ${namedEntity.tag}` : " "}
             </span>
         </span>
+
     )
 }
 

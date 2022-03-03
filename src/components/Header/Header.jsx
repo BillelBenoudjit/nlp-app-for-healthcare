@@ -13,7 +13,6 @@ function Header({ text, setText, setNamedEntities }) {
     const handleSubmit = (e) => {
         recognizeNamedEntities(text).then(
             result => {
-                console.log(result)
                 setNamedEntities(result)
             }
         ).catch(error => {

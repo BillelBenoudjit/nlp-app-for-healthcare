@@ -8,11 +8,13 @@ function EntityRecognition({ text, namedEntities }) {
     return (
         <div className="text">
             <h2>Entités reconnues</h2>
-            {namedEntities.map((entity, index) => {
-                return (
-                    <Entity namedEntity={entity} />
-                )
-            })}
+            <div className="entities">
+                {namedEntities.map((entity, index) => {
+                    return (
+                        <Entity namedEntity={entity} />
+                    )
+                })}
+            </div>
         </div>
     )
 }
