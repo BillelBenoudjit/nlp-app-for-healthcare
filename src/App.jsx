@@ -28,7 +28,7 @@ function App() {
           model={model}
           setModel={setModel}
         />
-        <EntityRecognition text={text} namedEntities={namedEntities} />
+        <EntityRecognition model={model} namedEntities={namedEntities} />
       </Container>
     </div >
   );

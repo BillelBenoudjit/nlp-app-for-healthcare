@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Entity({ namedEntity }) {
+function Entity({ namedEntity, model }) {
     const tagsColorMapping = {
         examen: { backgroundColor: "#eeefb2" },
         dose: { backgroundColor: "#a09ce0" },
@@ -21,9 +21,16 @@ function Entity({ namedEntity }) {
         date: { backgroundColor: "#d7d6ea" },
         dfault: { backgroundColor: "#fff" }
     }
+    const EnglishTagsColorMapping = {
+        disease: { backgroundColor: "#d7d6ea" },
+        dfault: { backgroundColor: "#fff" }
+    }
 
     return (
-        <span className={namedEntity.tag ? "entity" : ""} style={tagsColorMapping[namedEntity.tag] || tagsColorMapping.default}>
+        <span className={namedEntity.tag ? "entity" : ""} style={model === "Camembert - FR" ?
+            tagsColorMapping[namedEntity.tag] || tagsColorMapping.default
+            : EnglishTagsColorMapping[namedEntity.tag] || EnglishTagsColorMapping.default
+        }>
             {namedEntity.entity}
             <span className="tag">
                 {namedEntity.tag ? ` ${namedEntity.tag}` : " "}
