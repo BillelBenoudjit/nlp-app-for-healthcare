@@ -5,5 +5,6 @@ export const recognizeNamedEntities = async (text, model) => {
     await axios.post(`${process.env.REACT_APP_BASE_URL}/ner/${model}`, { text: text }).then((response) => {
         results = response.data
     })
+    console.log(results)
     return results
 }

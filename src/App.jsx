@@ -8,7 +8,7 @@ import EntityRecognition from './components/EntityReconition/EntityRecognition'
 function App() {
   const [text, setText] = useState("")
   const [namedEntities, setNamedEntities] = useState([])
-  const [model, setModel] = useState("Camembert - FR")
+  const [model, setModel] = useState("Camembert/DEFT - FR")
 
   return (
     <div

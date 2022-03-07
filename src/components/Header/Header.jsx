@@ -14,14 +14,20 @@ function Header({ text, setText, setNamedEntities, model, setModel }) {
     const handleSubmit = (e) => {
         let url = ""
         switch (model) {
-            case "Camembert - FR":
+            case "Camembert/DEFT - FR":
                 url = "camembert"
                 break
-            case "Bio_ClinicalBert - EN":
-                url = "clinicalbert"
+            case "Bio_ClinicalBert/NCBI - EN":
+                url = "ncbi/clinicalbert"
                 break
-            case "BlueBert - EN":
-                url = "bluebert"
+            case "BlueBert/NCBI - EN":
+                url = "ncbi/bluebert"
+                break
+            case "BlueBert/BC5CDR - EN":
+                url = "bc5cdr/bluebert"
+                break
+            case "BlueBert/BioNLP13CG - EN":
+                url = "bionlp13cg/bluebert"
                 break
             default:
                 url = ""
@@ -48,9 +54,11 @@ function Header({ text, setText, setNamedEntities, model, setModel }) {
                         <Input type="textarea" name="text" id="exampleText" onChange={onTextChange} />
                     </FormGroup>
                     <Input style={{ width: "50%", display: "inline", marginRight: "10px" }} type="select" onChange={onModelChange}>
-                        <option>Camembert - FR</option>
-                        <option>Bio_ClinicalBert - EN</option>
-                        <option>BlueBert - EN</option>
+                        <option>Camembert/DEFT - FR</option>
+                        <option>Bio_ClinicalBert/NCBI - EN</option>
+                        <option>BlueBert/NCBI - EN</option>
+                        <option>BlueBert/BC5CDR - EN</option>
+                        <option>BlueBert/BioNLP13CG - EN</option>
                     </Input>
                     <Button style={{ display: "inline" }} onClick={handleSubmit}>Soumettre</Button>
                 </Form>
