@@ -8,7 +8,8 @@
     justify-content: space-evenly;
     flex-direction: column;
     height: 35vh;
-    width: 100%
+    width: 100%;
+    text-align: justify;
 }
 
 @media (max-width: 900px) {
