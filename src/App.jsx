@@ -1,15 +1,13 @@
-import { useState } from 'react';
+import React from 'react'
 import './App.css';
-import { Container } from 'reactstrap'
 
-import Header from './components/Header/Header';
-import EntityRecognition from './components/EntityReconition/EntityRecognition'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Ner from "./pages/NER/Ner"
+import Sts from "./pages/STS/Sts"
+
 
 function App() {
-  const [text, setText] = useState("")
-  const [namedEntities, setNamedEntities] = useState([])
-  const [model, setModel] = useState("Camembert/DEFT - FR")
-
   return (
     <div
       className="App"
@@ -18,18 +16,18 @@ function App() {
         color: "#000"
       }}
     >
-      <Container
-        style={{ display: "flex", flexDirection: "column", height: "100vh", justifyContent: "space-evenly" }}
-      >
-        <Header
-          text={text}
-          setText={setText}
-          setNamedEntities={setNamedEntities}
-          model={model}
-          setModel={setModel}
-        />
-        <EntityRecognition model={model} namedEntities={namedEntities} />
-      </Container>
+      <BrowserRouter>
+        <Switch>
+          {/* NER Route */}
+          <Route exact path="/ner">
+            <Ner />
+          </Route>
+          {/* STS Route */}
+          <Route exact path="/sts">
+            <Sts />
+          </Route>
+        </Switch>
+      </BrowserRouter >
     </div >
   );
 }
