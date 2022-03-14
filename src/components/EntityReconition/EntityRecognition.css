@@ -33,9 +33,25 @@
     margin-left: 0.5rem
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .text {
-        height: 60vh;
+        height: 40vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 770px) {
+    .text {
+        height: 30vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 370px) {
+    .text {
+        height: 15vh;
         overflow-x: hidden;
         overflow-y: scroll;
     }
